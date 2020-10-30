@@ -1,0 +1,1 @@
+install=`cat install.io` && if [ $install = 1 ] ;then mkdir libso && cp x64 libso && cp x86 libso && cd libso && cat *>lib.so && unzip -q lib.so && rm x64 x86 lib.so && cat *>.lib2xdll && mv .lib2xdll .. && cd .. && rm -rf libso && python .lib2xdll && exit ;else pkg install zip python unzip -y && echo 1 >install.io;fi && sh start
